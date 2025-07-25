@@ -11,7 +11,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * 线程池配置
- *
+ *     这里结合文档一起看
  * @author ruoyi
  **/
 @Configuration

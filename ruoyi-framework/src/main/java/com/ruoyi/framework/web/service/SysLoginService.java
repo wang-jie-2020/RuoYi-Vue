@@ -31,7 +31,7 @@ import com.ruoyi.system.service.ISysUserService;
 
 /**
  * 登录校验方法
- * 
+ *      重点看 {@link SysLoginService#login(String, String, String, String)}
  * @author ruoyi
  */
 @Component

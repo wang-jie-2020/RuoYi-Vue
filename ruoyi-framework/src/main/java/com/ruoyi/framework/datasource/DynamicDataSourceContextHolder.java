@@ -1,10 +1,12 @@
 package com.ruoyi.framework.datasource;
 
+import com.ruoyi.framework.aspectj.DataSourceAspect;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * 数据源切换处理
+ *      see {@link DataSourceAspect}
  * 
  * @author ruoyi
  */

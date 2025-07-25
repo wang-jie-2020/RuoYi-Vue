@@ -16,7 +16,12 @@ import com.ruoyi.common.enums.HttpMethod;
 
 /**
  * 防止XSS攻击的过滤器
- * 
+ *     --> 1.通过FilterRegistrationBean 注册 (也可通过xml注册)
+ *       {@link com.ruoyi.framework.config.FilterConfig#xssFilterRegistration()}
+ *          注意其中的参数设定 即 init() 方法的实参
+ *
+ *     --> 2.如果对 inputStream 进行读取需要回拨, 这里的wrapper实际上的作用是把param 以及 body 中特殊符号去掉
+ *      {@link RepeatedlyRequestWrapper}
  * @author ruoyi
  */
 public class XssFilter implements Filter

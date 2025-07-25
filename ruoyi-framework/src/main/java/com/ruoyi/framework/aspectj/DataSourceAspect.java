@@ -17,7 +17,10 @@ import com.ruoyi.framework.datasource.DynamicDataSourceContextHolder;
 
 /**
  * 多数据源处理
- * 
+ *  1.拦截标注 {@link com.ruoyi.common.annotation.DataSource}
+ *  2.这里实际上只是往 {@link DynamicDataSourceContextHolder} 中防止DataSource参数
+ *  3.继续阅读 {@link com.ruoyi.framework.datasource.DynamicDataSource}
+ *
  * @author ruoyi
  */
 @Aspect

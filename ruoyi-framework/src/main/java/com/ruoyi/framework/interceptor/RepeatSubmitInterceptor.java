@@ -13,7 +13,15 @@ import com.ruoyi.common.utils.ServletUtils;
 
 /**
  * 防止重复提交拦截器
- *
+ *  疑问:
+ *    (1)这是个抽象类,它标记了@Component是否会注册?
+ *      demo验证下来不会
+ *    (2)SameUrlDataInterceptor extends RepeatSubmitInterceptor 就注册了 类型是<RepeatSubmitInterceptor> 实例类型是SameUrlDataInterceptor的Bean?
+ *      是的,并且只会默认在RepeatSubmitInterceptor.class下拿到实例,在HandlerInterceptor.class下拿不到,除非再implements HandlerInterceptor
+
+ *    (3) handler 参数是什么意思 --> 拦截的controller
+ *    (4) 有3个方法而不是2个,,pre不提,post会是200才到的吗? --> 是
+ *    (5) 如果未回拨inputStream,会怎么样? --> 会报错...
  * @author ruoyi
  */
 @Component

@@ -11,7 +11,9 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
  * redis配置
- * 
+ *      1.替换了序列化工具FastJson2
+ *      2.限流script  DefaultRedisScript<Long>???
+ *
  * @author ruoyi
  */
 @Configuration

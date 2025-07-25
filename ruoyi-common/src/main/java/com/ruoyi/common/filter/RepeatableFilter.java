@@ -13,7 +13,17 @@ import com.ruoyi.common.utils.StringUtils;
 
 /**
  * Repeatable 过滤器
- * 
+ *     --> 1.通过FilterRegistrationBean 注册 (也可通过xml注册)
+ *       {@link com.ruoyi.framework.config.FilterConfig#someFilterRegistration()}
+ *
+ *     --> 2.如果对 inputStream 进行读取需要回拨
+ *      {@link RepeatedlyRequestWrapper}
+ *
+ *     --> 3.它的优先级为什么是 FilterRegistrationBean.LOWEST_PRECEDENCE?
+ *
+ *     --> 4. interceptor如果读了body,也会有wrapper需求?
+ *          是的
+ *
  * @author ruoyi
  */
 public class RepeatableFilter implements Filter

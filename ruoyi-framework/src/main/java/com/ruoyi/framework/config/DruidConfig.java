@@ -26,7 +26,9 @@ import com.ruoyi.framework.datasource.DynamicDataSource;
 
 /**
  * druid 配置多数据源
- * 
+ *      ConfigurationProperties
+ *      ConditionalOnProperty
+ *
  * @author ruoyi
  */
 @Configuration

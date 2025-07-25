@@ -20,7 +20,9 @@ import com.ruoyi.common.annotation.Anonymous;
 
 /**
  * 设置Anonymous注解允许匿名访问的url
- * 
+ *  1. InitializingBean  -->  Bean实例化后触发执行方法, Bean在实例化、属性注入后，重写的afterPropertiesSet()就会触发执行。
+ *  2. RequestMappingHandlerMapping
+ *
  * @author ruoyi
  */
 @Configuration

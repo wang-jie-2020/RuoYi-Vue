@@ -20,6 +20,12 @@ import com.ruoyi.framework.security.context.PermissionContextHolder;
 /**
  * 数据过滤处理
  *
+ *  过程是否对于项目必要就不讨论了,主要理解思路
+ *   1. 拦截标注例: @DataScope(deptAlias = "d", userAlias = "u")
+ *   2. 约定方法的第一个参数就是需要筛选的实体
+ *   3. 实体中有一个 param 的 HashMap,通过当前登录User的一些属性构造SQL语句,放到HashSet中
+ *   4. Mapper中读取HashMap --> 注意下写的是 ${} 而不是 #{} ,前者不会对字符特殊处理原样输出,后者加个引号(有防止注入的功能)
+ *
  * @author ruoyi
  */
 @Aspect

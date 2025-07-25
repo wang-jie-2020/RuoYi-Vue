@@ -15,8 +15,9 @@ import com.ruoyi.common.utils.SecurityUtils;
 
 /**
  * 数据脱敏序列化过滤
+ *   有个细节: 已经在需要特殊处理的字段上标注了@JsonSerialize(using = SensitiveJsonSerializer.class),为什么还需要ContextualSerializer?
+ *      尝试注释掉接口,一样可以断到..问题在于无法拿到注解
  *
- * @author ruoyi
  */
 public class SensitiveJsonSerializer extends JsonSerializer<String> implements ContextualSerializer
 {
@@ -55,9 +56,11 @@ public class SensitiveJsonSerializer extends JsonSerializer<String> implements C
     {
         try
         {
-            LoginUser securityUser = SecurityUtils.getLoginUser();
-            // 管理员不脱敏
-            return !securityUser.getUser().isAdmin();
+            return true;
+
+//            LoginUser securityUser = SecurityUtils.getLoginUser();
+//            // 管理员不脱敏
+//            return !securityUser.getUser().isAdmin();
         }
         catch (Exception e)
         {
@@ -65,3 +68,11 @@ public class SensitiveJsonSerializer extends JsonSerializer<String> implements C
         }
     }
 }
+
+/*
+    Q: 未找到是如何将 SensitiveJsonSerializer 链到 ContextualSerializer的处理链上的...
+
+    createContextual() 中按是否存在Sensitive注解返回this 或 默认
+    serialize() 对序列化中的string 再处理
+
+ */

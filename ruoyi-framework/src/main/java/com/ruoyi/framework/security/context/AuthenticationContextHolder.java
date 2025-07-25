@@ -4,7 +4,7 @@ import org.springframework.security.core.Authentication;
 
 /**
  * 身份验证信息
- * 
+ *     ThreadLocal
  * @author ruoyi
  */
 public class AuthenticationContextHolder

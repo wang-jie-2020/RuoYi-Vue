@@ -17,7 +17,12 @@ import com.ruoyi.framework.interceptor.RepeatSubmitInterceptor;
 
 /**
  * 通用配置
- * 
+ *      1. ResourceHandlers 这里/profile/** 指向 D:/ruoyi/uploadPath
+ *          必须以file: 开头?
+ *      2. Interceptors
+ *      3. CorsFilter 这里提供了Bean,但是用法在SpringSecurity中...
+ *
+ *      命名换成MvcConfig更合适...
  * @author ruoyi
  */
 @Configuration

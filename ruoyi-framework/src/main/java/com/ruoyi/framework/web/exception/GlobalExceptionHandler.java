@@ -21,7 +21,7 @@ import com.ruoyi.common.utils.html.EscapeUtil;
 
 /**
  * 全局异常处理器
- * 
+ *      RestControllerAdvice    ExceptionHandler
  * @author ruoyi
  */
 @RestControllerAdvice

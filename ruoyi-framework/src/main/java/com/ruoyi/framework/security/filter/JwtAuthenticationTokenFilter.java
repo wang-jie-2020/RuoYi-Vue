@@ -18,7 +18,8 @@ import com.ruoyi.framework.web.service.TokenService;
 
 /**
  * token过滤器 验证token有效性
- * 
+ *      Filter 继续看... DelegateFilterProxy
+ *      它也是由Spring Ioc管理的吗 ?
  * @author ruoyi
  */
 @Component
